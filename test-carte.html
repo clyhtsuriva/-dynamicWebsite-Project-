@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <title>Carte de test</title>
+                <meta charset="UTF-8"/>
+		<link rel="stylesheet" href="leaflet.css"/>
+		<script src="leaflet.js"></script> 
+        </head>
+        <body>
+		<p><b>Carte de test</b></p>
+		<div id="carte" style="width: 600px; height: 400px"></div>
+		<script>
+			var map = L.map("carte");
+			map.setView({lat: 48.9559156 , lon: 2.338811599999854}, 10);
+			url="https://{s}.tile.openstreetmap.org" + "/{z}/{x}/{y}.png";
+			var layer = L.tileLayer(url);
+			layer.addTo(map);
+			var m = L.marker({lat: 48.9559156, lon: 2.338811599999854});
+			m.addTo(map);
+			m.bindPopup('<a href="http://www.iutv.univ-paris13.fr/">IUT</a>');
+		</script>
+	</body>
+</html>
+
